@@ -1,14 +1,21 @@
 plugins {
     id("java-library")
     alias(libs.plugins.jetbrains.kotlin.jvm)
+    kotlin("kapt")
 }
 java {
-    sourceCompatibility = JavaVersion.valueOf(libs.versions.javaVersion.get())
-    targetCompatibility = JavaVersion.valueOf(libs.versions.javaVersion.get())
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
 kotlin {
     compilerOptions {
-        jvmTarget =
-            org.jetbrains.kotlin.gradle.dsl.JvmTarget.fromTarget(libs.versions.jvmTarget.get())
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
     }
+}
+
+dependencies {
+    implementation(libs.androidx.annotation)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.coroutines.core)
+    testImplementation(libs.kotlinx.coroutines.test)
 }

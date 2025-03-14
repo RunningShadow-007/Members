@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.group.feature.login"
-    compileSdk = libs.versions.compileSdk.get().toInt()
+    namespace = "com.group.core.router"
+    compileSdk = 35
 
     defaultConfig {
-        minSdk = libs.versions.minSdk.get().toInt()
+        minSdk = 24
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -24,16 +24,15 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.valueOf(libs.versions.javaVersion.get())
-        targetCompatibility = JavaVersion.valueOf(libs.versions.javaVersion.get())
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = libs.versions.jvmTarget.get()
+        jvmTarget = "11"
     }
 }
 
 dependencies {
-    implementation(project(":core:network"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

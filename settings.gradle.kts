@@ -27,10 +27,8 @@ include(":core:network")
 include(":core:ui")
 include(":core:notifications")
 include(":core:common")
-include(":core:model")
 include(":core:datastore")
 include(":feature:login")
-include(":feature:homepage")
 include(":feature:notebook")
 include(":feature:todolist")
 include(":feature:album")
@@ -42,3 +40,6 @@ check(JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_17)) {
     https://developer.android.com/build/jdks#jdk-config-in-studio
     """.trimIndent()
 }
+include(":core:router")
+include(":core:model")
+include(":core:data")
